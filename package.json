@@ -1,0 +1,39 @@
+{
+  "name": "react-bind-decorator",
+  "version": "1.0.0",
+  "description": "A decorator to bind only unique component methods",
+  "jsnext:main": "src/react-bind-decorator.js",
+  "scripts": {
+    "start": "cd example && node server.js",
+  },
+  "devDependencies": {
+    "babel": "^5.6.14",
+    "babel-core": "^5.6.15",
+    "babel-loader": "^5.2.2",
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "react-hot-loader": "^1.3.0",
+    "rimraf": "^2.4.4",
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {},
+  "peerDependencies": {},
+  "files": [
+    "src/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zackargyle/react-bind-decorator.git"
+  },
+  "keywords": [
+    "react",
+    "react-component"
+  ],
+  "author": "Zack Argyle <zackargyle@pinterest.com> (http://zackargyle.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zackargyle/react-image-layout/"
+  },
+  "homepage": "https://github.com/zackargyle/react-image-layout#readme"
+}
