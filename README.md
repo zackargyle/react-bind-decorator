@@ -1,15 +1,14 @@
-## react-bind-decorator
+# react-bind-decorator
 
 An ES2016 decorator that autobinds all of the unique class methods that are not React.Component prototype methods. This is lighter, and faster than the `core-decorator` autobind decorator for React components.
 
 ## Install
 
 ``` js
-// TODO: publish to npm
 npm install react-bind-decorator --save
 ```
 
-Usage:
+## Usage:
 ``` js
 
 import reactbind from 'react-bind-decorator';
@@ -39,10 +38,15 @@ class Foo extends React.Component {
 
 ```
 
+## Benchmarks
+
+![](https://raw.githubusercontent.com/zackargyle/react-bind-decorator/master/benchmarks/benchmarks.png)
+
 ## Scripts
 script         | description
 -------------- | -----------
 `npm start`    | run the example on `localhost:3000`
+`npm run benchmark` | run the benchmarks to get average time to render
 
 ## License
 [MIT](http://isekivacenz.mit-license.org/)
