@@ -28,10 +28,8 @@ function isFunction(fn) {
  * @param {Object} target - the root object
  * @param {string} method - an object attribute
  */
-function isNotReactMethod(target) {
-    return (method) => {
-        return isFunction(target.prototype[method]) && !REACT_METHODS[method];
-    }
+function isNotReactMethod(target, method) {
+    return isFunction(target.prototype[method]) && !REACT_METHODS[method];
 }
 
 /*
@@ -41,16 +39,18 @@ function isNotReactMethod(target) {
  */
 function bindMethod(target) {
     return (method) => {
-        const fn = target.prototype[method];
-        let boundFn = null;
-        Object.defineProperty(target.prototype, method, {
-            get() {
-                if (!boundFn) {
-                    boundFn = fn.bind(this);
+        if (isNotReactMethod(target, method)) {
+            const fn = target.prototype[method];
+            let boundFn = null;
+            Object.defineProperty(target.prototype, method, {
+                get() {
+                    if (!boundFn) {
+                        boundFn = fn.bind(this);
+                    }
+                    return boundFn;
                 }
-                return boundFn;
-            }
-        });
+            });
+        }
     };
 }
 
@@ -62,7 +62,6 @@ function bindMethod(target) {
 export default function bind() {
     return function(target) {
         Object.getOwnPropertyNames(target.prototype)
-              .filter(isNotReactMethod(target))
               .forEach(bindMethod(target))
     };
 }
