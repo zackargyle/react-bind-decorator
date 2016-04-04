@@ -16,15 +16,8 @@ import reactbind from 'react-bind-decorator';
 @reactbind()
 class Foo extends React.Component {
 
-    // This gets called with the correct <this>
-    boundMethod(arg, i) {
-        return <li key={i}>{this.props.test + arg}</li>;
-    }
-
-    // Not bound
-    componentDidMount() {
-
-    }
+    // Bound
+    boundMethod(arg, i) { ... }
 
     // Not bound
     render() {
@@ -35,6 +28,29 @@ class Foo extends React.Component {
         );
     }
 }
+
+export default Foo;
+
+```
+
+Optionally it can be used not as a decorator
+```
+class Foo extends React.Component {
+
+    // Bound
+    boundMethod(arg, i) { ... }
+
+    // Not bound
+    render() {
+        return (
+            <div>
+                { this.props.data.map(this.boundMethod) }
+            </div>
+        );
+    }
+}
+
+export default reactbind()(Foo);
 
 ```
 

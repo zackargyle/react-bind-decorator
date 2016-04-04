@@ -63,5 +63,6 @@ export default function bind() {
     return function(target) {
         Object.getOwnPropertyNames(target.prototype)
               .forEach(bindMethod(target))
+        return target;
     };
 }
