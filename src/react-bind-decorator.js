@@ -10,6 +10,8 @@ const REACT_METHODS = {
     componentWillUpdate: true,
     componentDidUpdate: true,
     componentWillUnmount: true,
+    getSnapshotBeforeUpdate: true,
+    componentDidCatch: true,
     isMounted: true,
     render: true,
     replaceProps: true,
