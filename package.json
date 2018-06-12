@@ -4,6 +4,7 @@
   "description": "A decorator to bind only unique component methods",
   "jsnext:main": "src/react-bind-decorator.js",
   "main": "src/react-bind-decorator.js",
+  "types": "./index.d.ts",
   "scripts": {
     "start": "cd example && node server.js",
     "benchmark": "NODE_ENV=production node benchmarks/index.js"
